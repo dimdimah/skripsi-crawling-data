@@ -1,0 +1,9 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+
+# Local configuration and secrets
+.env
+
+# VS Code settings
+.vscode/
