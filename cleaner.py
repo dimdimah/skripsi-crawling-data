@@ -3,7 +3,6 @@ def clean_job(job):
     title = job.get("title")
     url = job.get("url")
 
-    # safety check
     if not company or not title or not url:
         return None
 
@@ -17,4 +16,11 @@ def clean_job(job):
     if not url.startswith("http"):
         return None
 
-    return job
+    return {
+        "company": company,
+        "title": title,
+        "url": url,
+        "location": (job.get("location") or "").strip() or "Indonesia",
+        "description": (job.get("description") or "").strip(),
+        "skills": job.get("skills", []),
+    }
